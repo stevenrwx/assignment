@@ -38,7 +38,7 @@ echo "ansible time....."
 ansible-playbook /etc/ansible/playbook/nginx.yml -l 127.0.0.1
 echo "python time......"
 apt install python3
-mv /root/assignment/files/webervers.service /etc/systemd/system/webervers.service
+# mv /root/assignment/files/webservers.service /etc/systemd/system/webservers.service
 chmod +x /etc/systemd/system/webservers.service
 systemctl daemon-reload
 echo "checking services online......"
@@ -46,7 +46,7 @@ ufw allow 80
 ufw allow 8000
 systemctl status nginx
 systemctl status postgresql
-systemctl start webservices.service && systemctl enable webservices.service
+systemctl start webservers.service && systemctl enable webservers.service 
 
 if [ $? -gt 0 ]
 then 
@@ -54,6 +54,6 @@ then
 	exit 2
 else 
 echo "script ran succesfully"
-exit 1 
+exit 0
 fi
 
