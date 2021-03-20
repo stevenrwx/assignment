@@ -7,10 +7,10 @@ PORT = 8000
  
 class MyHttpRequestHandler(http.server.SimpleHTTPRequestHandler):
     def do_GET(self):
-        if self.path == '/':
-            self.path = 'helloworldpy.html'
-            return http.server.SimpleHTTPRequestHandler.do_GET(self)    
- 
+        html = "Hello World!"
+        self.wfile.write(bytes(html, "utf8"))
+        return
+
 Handler = MyHttpRequestHandler
  
 with socketserver.TCPServer(("", PORT), Handler) as httpd:
