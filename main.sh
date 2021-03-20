@@ -30,7 +30,7 @@ echo "Postgres User '$DB_USER' and database '$DB_NAME' created."
 EOF
 echo "copy playbooks.........."
 mkdir /etc/ansible/playbook
-cp ./files/nginx.yml /etc/ansible/playbook/nginx.yml
+cp /root/assignment/files/nginx.yml /etc/ansible/playbook/nginx.yml
 echo "ansible time....."
 ansible-playbook /etc/ansible/playbook/nginx.yml -l 127.0.0.1
 echo "checking services online......"
