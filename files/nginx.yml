@@ -8,20 +8,16 @@
           name: nginx
           state: started
 
-    - name: copy the nginx config file and restart nginx
+    - name: copy the nginx config file 
       copy:
         src: /root/assignment/files/default
         dest: /etc/nginx/sites-available/default
-      become: yes
-  
-  
 
     - name: enable configuration
       file: >
         dest=/etc/nginx/sites-enabled/default
         src=/etc/nginx/sites-available/default
         state=link
-      become: yes
 
 
     - name: copy the content of the web site
@@ -34,4 +30,17 @@
       service:
         name: nginx
         state: restarted
-      become: yes
+
+
+    - name: copy unit file to correct directory
+      copy:
+        src: /root/assignment/files/webservers.service 
+        dest: /etc/systemd/system/webservers.service
+        mode: +x
+
+    - name: daemon reload and start webservers
+      systemd:
+        name: webservers.service
+        daemon_reload: yes
+        enabled: yes
+        state: started
