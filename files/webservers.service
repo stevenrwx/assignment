@@ -1,0 +1,10 @@
+[Unit]
+Description=This service will run the python script
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /root/assignment/files/helloworld.py >/dev/null 2>&1 & 
+StandardInput=tty-force
+
+[Install]
+WantedBy=multi-user.target
