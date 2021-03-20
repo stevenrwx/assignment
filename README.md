@@ -7,5 +7,10 @@ PostgreSQL DBMS and create DB, user for DB, set users password.
 
 Python application which would serve "Hello World!"
 
-This has been run on the following distro : Linux Ubuntu server 18.04 LTS
+Distro : Linux Ubuntu server 18.04 LTS
+
+# expected results
+
+Nginx will be serving "hello world, ansible" on port 80
+Python will be serving "Hello World!" on port 8000
 
