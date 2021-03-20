@@ -1,3 +1,5 @@
+# script main.sh must be run in "/root/" directory
+
 # Assignment
 Automate as much as possible the installation of the following:
 
@@ -21,4 +23,9 @@ user = "test"
 
 password = "hardpass"
 
+# Summary
+
+Main.sh install nginx,postgresql,ansible
+
+Ansible will configure nginx and create the service called "webservers.service"
 
