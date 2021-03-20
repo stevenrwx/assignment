@@ -7,7 +7,7 @@ PORT = 8000
  
 class MyHttpRequestHandler(http.server.SimpleHTTPRequestHandler):
     def do_GET(self):
-        self.path = 'helloworldpy.html'
+        self.path = './helloworldpy.html'
         return http.server.SimpleHTTPRequestHandler.do_GET(self)
  
 Handler = MyHttpRequestHandler
