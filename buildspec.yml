@@ -8,3 +8,7 @@ phases:
       python: 3.8
     commands:
       - echo "test"
+artifacts:
+  files:
+    - '**/*'
+    name: build-$(date +%Y-%m-%d)
