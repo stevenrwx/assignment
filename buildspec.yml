@@ -3,11 +3,12 @@ version: 0.2
 phases:
   install:
     run-as: root
+    on-failure: ABORT
     runtime-versions:
       docker: 18
       python: 3.8
     commands:
-      - echo "test"
+      - echo "some tests ect..."
 
 artifacts:
   files:
